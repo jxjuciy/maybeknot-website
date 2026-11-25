@@ -256,13 +256,14 @@ for (const field of requiredTextFields) {
 }
 
 form.addEventListener('input', () => { status.textContent = ''; });
-form.addEventListener('submit', async event => {
+form.addEventListener('submit', event => {
   event.preventDefault();
-  const draft = `Name: ${form.elements.name.value.trim()}\nEmail: ${form.elements.email.value.trim()}\n\n${form.elements.message.value.trim()}`;
-  try {
-    await navigator.clipboard.writeText(draft);
-    status.textContent = 'Draft copied to your clipboard.';
-  } catch {
-    status.textContent = 'Clipboard access is unavailable. You can select and copy the fields manually.';
-  }
+  const recipient = 'tricianneborres@gmail.com';
+  const name = form.elements.name.value.trim();
+  const email = form.elements.email.value.trim();
+  const message = form.elements.message.value.trim();
+  const subject = `Maybe Knot website message from ${name}`;
+  const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+  status.textContent = `Opening your email app. If it doesn't open, email ${recipient} directly.`;
+  window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });

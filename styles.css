@@ -107,6 +107,9 @@ h2 { font-size: clamp(2.25rem, 4.3vw, 4.25rem); letter-spacing: -.052em; }
 
 .contact { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 22px; padding-block: 27px 40px; border-top: 1px solid var(--line); }
 .contact h2 { font-size: clamp(1.85rem, 3.1vw, 3rem); }
+.facebook-link { display: inline-flex; align-items: center; gap: 8px; color: #1877f2; font-weight: 600; }
+.facebook-link svg { width: 25px; height: 25px; }
+.facebook-link:hover { color: #125fca; }
 .footer { background: var(--cream); padding-block: 30px 89px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
 .footer-inner > small { color: var(--muted); font-size: .8rem; }
